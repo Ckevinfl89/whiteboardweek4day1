@@ -22,6 +22,26 @@ def solution(nums):
     max_count.append(running_number)
     return max(max_count)
         
+
+
+def solution(nums):
+    consecutive_nums = 0
+    max_consecutive = 0
+    for num in nums:
+        if num:
+            consecutive_nums += 1
+        else:
+            if consecutive_nums > max_consecutive:
+                max_consecutive = consecutive_nums
+            consecutive_nums = 0
+    if consecutive_nums > max_consecutive:
+        max_consecutive = consecutive_nums
+    return max_consecutive
+
+
+
+def solution(nums):
+    return max(map(len, ''.join(map(str, nums)).split('0')))
         
 
 
