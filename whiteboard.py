@@ -12,14 +12,15 @@
 
 def solution(nums):
     running_number = 0
-    max_count = 0
+    max_count = []
     for num in nums:
         if num == 1:
             running_number += 1
         else: 
            max_count.append(running_number)
            running_number = 0
-    return(nums)
+    max_count.append(running_number)
+    return max(max_count)
         
         
 
@@ -35,3 +36,17 @@ def solution(nums):
 #       current_count = 0
 
 #   return max_count
+
+
+def solution(num_list):
+    num_count = 0 # Iterate over each number and if its a 1 add to count
+    consecutive_ones = []
+    for num in num_list:
+        if num == 1:
+            num_count += 1
+            consecutive_ones.append(num_count)
+        else:
+            consecutive_ones.append(num_count)
+            num_count = 0
+
+    return max(consecutive_ones)
